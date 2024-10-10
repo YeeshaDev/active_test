@@ -1,5 +1,11 @@
+#Dependencies
 node_modules
 npm-debug.log
+
+#Build output
 .next
-Dockerfile
-docker-compose.yml
+out
+
+#version control
+.git
+.gitignore
