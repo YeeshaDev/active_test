@@ -1,0 +1,24 @@
+{
+    "name": "active",
+    "dockerFile": "Dockerfile",
+    "customizations": {
+    "vscode": {
+    "extensions": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "figma.figma-vscode-extension",
+      "github.vscode-github-actions"
+    ],
+    "settings": {
+      "terminal.integrated.shell.linux": "/bin/bash",
+      "editor.fontSize": 14,
+      "editor.fontWeight": "300",
+      "editor.formatOnSave": true
+    }
+  } 
+},
+    "forwardPorts": [3000],
+    "postCreateCommand": "npm install",
+    "remoteUser": "node"
+  }
+  
