@@ -1,0 +1,66 @@
+{
+  "name": "active",
+  "build": { "dockerfile": "../Dockerfile" },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bradlc.vscode-tailwindcss",
+        "christian-kohler.path-intellisense",
+        "codesandbox-io.codesandbox-projects-theme",
+        "pkief.material-icon-theme",
+        "dbaeumer.vscode-eslint",
+        "wayou.vscode-todo-highlight",
+        "ms-azuretools.vscode-docker",
+        "mutantdino.resourcemonitor",
+        "yoavbls.pretty-ts-errors",
+        "mhutchie.git-graph",
+        "eamodio.gitlens",
+        "ms-vscode-remote.remote-containers",
+        "esbenp.prettier-vscode",
+        "figma.figma-vscode-extension",
+        "github.vscode-github-actions",
+        "trunk.io"
+      ],
+      "settings": {
+        "editor.codeLensFontFamily": "'Fira Code'",
+        "editor.fontFamily": "'Fira Code'",
+        // This will change e.g. '===' to three horizontal lines.
+        "editor.fontLigatures": false,
+        "editor.fontSize": 14,
+        "editor.fontWeight": "300",
+        "editor.inlayHints.fontFamily": "'Fira Code'",
+        "editor.letterSpacing": 0,
+        "editor.lineHeight": 23,
+        "explorer.confirmDelete": false,
+        "extensions.ignoreRecommendations": true,
+        "git.autofetch": "all",
+        "git.autofetchPeriod": 300,
+        "git.confirmSync": false,
+        "git.fetchOnPull": true,
+        "git.pruneOnFetch": true,
+        "git.rebaseWhenSync": true,
+        "markdown.preview.fontFamily": "-apple-system, 'system-ui', 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'",
+        "notebook.output.fontFamily": "'Fira Code'",
+        "nxConsole.enableTelemetry": false,
+        "nxConsole.showNodeVersionOnStartup": false,
+        "terminal.integrated.fontFamily": "monospace",
+        "terminal.integrated.fontSize": 16,
+        "workbench.colorTheme": "CodeSandbox",
+        "workbench.iconTheme": "material-icon-theme"
+      }
+    }
+  },
+   "hostRequirements": {
+    "cpus": 8,
+    "memory": "8gb",
+    "storage": "16gb"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/trunk-io/devcontainer-feature/trunk:1": {}
+  },
+  "forwardPorts": [3000],
+  "postCreateCommand": "npm install",
+  "updateContentCommand": "trunk install"
+}

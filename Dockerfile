@@ -1,8 +1,11 @@
-# Use the official Node.js image.
-FROM node:18-slim
+# --[[ base ]]--
+FROM node:20.12.0-bullseye-slim as base
 
 # Set working directory inside the container
 WORKDIR /app
+
+# Install dependencies
+RUN apt-get update -qq && apt-get install -y -qq --no-install-recommends
 
 # Copy the package.json and package-lock.json files
 COPY package*.json ./
