@@ -1,0 +1,11 @@
+#Dependencies
+node_modules
+npm-debug.log
+
+#Build output
+.next
+out
+
+#version control
+.git
+.gitignore
