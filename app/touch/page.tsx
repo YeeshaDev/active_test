@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, TouchEvent, MouseEvent } from "react";
+import { useEffect, useRef, TouchEvent } from "react";
 
 export default function TouchGrid() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
