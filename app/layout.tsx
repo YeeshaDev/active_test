@@ -14,9 +14,20 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Active Testing",
+  title: "Active",
   description: "",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+  },
 };
+
+export const viewport = {
+    width: 'device-width',
+    initialScale: 1.0,
+    maximumScale: 1.0,
+    userScalable: false,
+}
 
 export default function RootLayout({
   children,

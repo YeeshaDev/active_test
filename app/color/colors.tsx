@@ -1,9 +1,9 @@
 "use client";
-import { useRouter } from "next/navigation";
+
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Colors() {
-  const router = useRouter();
   // Array of 7 testing colors
   const colors = [
     "#FF0000",
@@ -29,8 +29,8 @@ export default function Colors() {
     >
       {/* Icon to navigate to the previous page */}
       <div className="p-4">
-        <button
-          onClick={router.back}
+        <Link
+          href="/"
           className="text-white text-2xl p-2 rounded focus:outline-none"
         >
           <svg
@@ -47,7 +47,7 @@ export default function Colors() {
               d="M21 16.811c0 .864-.933 1.406-1.683.977l-7.108-4.061a1.125 1.125 0 0 1 0-1.954l7.108-4.061A1.125 1.125 0 0 1 21 8.689v8.122ZM11.25 16.811c0 .864-.933 1.406-1.683.977l-7.108-4.061a1.125 1.125 0 0 1 0-1.954l7.108-4.061a1.125 1.125 0 0 1 1.683.977v8.122Z"
             />
           </svg>
-        </button>
+        </Link>
       </div>
     </div>
   );
