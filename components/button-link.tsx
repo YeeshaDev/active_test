@@ -1,5 +1,5 @@
 import type { ComponentPropsWithoutRef } from "react";
-import cn from "@/utils/cn";
+import cn from "@/utils/tailwind/cn";
 import type PropsWithRequiredChildren from "@/types/props-with-required-children";
 import Button from "./button";
 import Link from "next/link";

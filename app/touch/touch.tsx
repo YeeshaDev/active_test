@@ -54,43 +54,41 @@ export default function Touch() {
   };
 
   // Function to handle touch events
-  const handleTouch = (
-    e: TouchEvent<HTMLCanvasElement> 
-  ) => {
-     const canvas = canvasRef.current;
-     
+  const handleTouch = (e: TouchEvent<HTMLCanvasElement>) => {
+    const canvas = canvasRef.current;
+
     if (canvas === null) {
       console.error("Failed to get canvas element");
       return;
     }
-     
-     const context = canvas.getContext("2d");
-     
+
+    const context = canvas.getContext("2d");
+
     if (context === null) {
       console.error("Failed to get canvas context");
       return;
     }
-     
+
     const rect = canvas.getBoundingClientRect();
 
     // Check if the event is a TouchEvent
-     if(!("touches" in e)) {
+    if (!("touches" in e)) {
       return;
     }
-      // Get touch coordinates
-      const touch = e.touches[0];
-      const x = touch.clientX - rect.left;
-     const y = touch.clientY - rect.top;
-     
-      // Calculate which box was touched
-      const row = Math.floor(y / boxSize);
-      const col = Math.floor(x / boxSize);
+    // Get touch coordinates
+    const touch = e.touches[0];
+    const x = touch.clientX - rect.left;
+    const y = touch.clientY - rect.top;
 
-      // Highlight the touched box
-      context.fillStyle = "rgba(0, 255, 0, 0.5)";
-      context.fillRect(col * boxSize, row * boxSize, boxSize, boxSize);
-    
-     // Redraw the grid to keep the lines visible
+    // Calculate which box was touched
+    const row = Math.floor(y / boxSize);
+    const col = Math.floor(x / boxSize);
+
+    // Highlight the touched box
+    context.fillStyle = "rgba(0, 255, 0)";
+    context.fillRect(col * boxSize, row * boxSize, boxSize, boxSize);
+
+    // Redraw the grid to keep the lines visible
     context.strokeStyle = "#000";
     context.lineWidth = 0.5;
     context.strokeRect(col * boxSize, row * boxSize, boxSize, boxSize);

@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useId, useState } from "react";
 
 export default function Colors() {
+  const colorElementId = useId();
+
   // Array of 7 testing colors
   const colors = [
     "#FF0000",
@@ -23,10 +25,12 @@ export default function Colors() {
 
   return (
     <div
+      id={colorElementId}
       className="min-h-screen flex items-start justify-start"
       style={{ backgroundColor: colors[currentColorIndex] }}
       onClick={handleScreenClick}
     >
+      ``
       {/* Icon to navigate to the previous page */}
       <div className="p-4">
         <Link

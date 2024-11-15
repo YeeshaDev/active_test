@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -18,16 +18,17 @@ export const metadata: Metadata = {
   description: "",
   appleWebApp: {
     capable: true,
-    statusBarStyle: 'black-translucent',
+    statusBarStyle: "black-translucent",
   },
 };
 
-export const viewport = {
-    width: 'device-width',
-    initialScale: 1.0,
-    maximumScale: 1.0,
-    userScalable: false,
-}
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+  maximumScale: 1.0,
+  userScalable: false,
+  themeColor: "#fff",
+};
 
 export default function RootLayout({
   children,

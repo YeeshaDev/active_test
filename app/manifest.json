@@ -1,0 +1,9 @@
+{
+  "name": "Active",
+  "short_name": "Active",
+  "description": "",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000"
+}

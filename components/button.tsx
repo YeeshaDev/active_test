@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import cv from "@/utils/cv";
-import cn from "@/utils/cn";
+import cv from "@/utils/tailwind/cv";
+import cn from "@/utils/tailwind/cn";
 import type VariantProps from "@/types/variant-props";
 import type SvgIcon from "@/types/svg-icon";
 import type PropsWithRequiredChildren from "@/types/props-with-required-children";
