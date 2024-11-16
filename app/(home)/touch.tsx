@@ -2,7 +2,11 @@
 
 import { useEffect, useRef, TouchEvent } from "react";
 
-export default function Touch() {
+export interface TouchProps {
+  readonly onExitClick: () => void;
+}
+
+export default function Touch({ onExitClick }: TouchProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   // Constants for the grid layout
@@ -95,15 +99,22 @@ export default function Touch() {
   };
 
   return (
-    <div>
+    <div className="bg-white z-50 fixed top-0 left-0 w-screen h-screen">
       <canvas
-        className="bg-slate-100"
+        onDoubleClickCapture={() => {
+          if (confirm("Are you sure you want to exit?")) {
+            onExitClick();
+          }
+        }}
         ref={canvasRef}
         id="touchGridCanvas"
         onTouchStart={handleTouch}
         onTouchMove={handleTouch}
         style={{ touchAction: "none" }} // Disable default touch behaviors
       />
+      <span className="absolute text-lg opacity-30 font-bold top-8 left-1/2 -translate-x-1/2 text-gray-900">
+        Double click to exit
+      </span>
     </div>
   );
 }

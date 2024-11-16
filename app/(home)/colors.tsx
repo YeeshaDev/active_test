@@ -1,5 +1,6 @@
 "use client";
 
+import Head from "next/head";
 import { useId, useState } from "react";
 
 export interface ColorsProps {
@@ -33,7 +34,9 @@ export default function Colors({ onBackClick }: ColorsProps) {
       style={{ backgroundColor: colors[currentColorIndex] }}
       onClick={handleScreenClick}
     >
-      {/* Icon to navigate to the previous page */}
+      <Head>
+        <meta name="theme-color" content={colors[currentColorIndex]} />
+      </Head>
       <div className="p-4">
         <button
           onClick={onBackClick}
