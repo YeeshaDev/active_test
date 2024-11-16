@@ -1,9 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import { useId, useState } from "react";
 
-export default function Colors() {
+export interface ColorsProps {
+  readonly onBackClick: () => void;
+}
+
+export default function Colors({ onBackClick }: ColorsProps) {
   const colorElementId = useId();
 
   // Array of 7 testing colors
@@ -26,15 +29,14 @@ export default function Colors() {
   return (
     <div
       id={colorElementId}
-      className="min-h-screen flex items-start justify-start"
+      className="absolute z-50 top-0 left-0 min-h-screen w-screen"
       style={{ backgroundColor: colors[currentColorIndex] }}
       onClick={handleScreenClick}
     >
-      ``
       {/* Icon to navigate to the previous page */}
       <div className="p-4">
-        <Link
-          href="/"
+        <button
+          onClick={onBackClick}
           className="text-white text-2xl p-2 rounded focus:outline-none"
         >
           <svg
@@ -51,7 +53,7 @@ export default function Colors() {
               d="M21 16.811c0 .864-.933 1.406-1.683.977l-7.108-4.061a1.125 1.125 0 0 1 0-1.954l7.108-4.061A1.125 1.125 0 0 1 21 8.689v8.122ZM11.25 16.811c0 .864-.933 1.406-1.683.977l-7.108-4.061a1.125 1.125 0 0 1 0-1.954l7.108-4.061a1.125 1.125 0 0 1 1.683.977v8.122Z"
             />
           </svg>
-        </Link>
+        </button>
       </div>
     </div>
   );

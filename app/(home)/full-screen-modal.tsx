@@ -27,7 +27,7 @@ export default function FullScreenModal() {
           <ol className="list-decimal list-inside text-gray-600 text-sm space-y-2">
             <li>
               <span>
-                Tap the share button on the top right corner of the screen.
+                Tap the share button on the bottom center of the screen
               </span>
               <Image
                 className="mb-6 pt-2"
