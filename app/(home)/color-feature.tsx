@@ -6,6 +6,7 @@ import { useState } from "react";
 import Colors from "./colors";
 import { useAtom } from "jotai";
 import { currentColorAtom } from "@/lib/atoms/themes";
+import { DEFAULT_RESET_COLOR, INITIAL_COLOR } from "@/lib/providers/theme-provider";
 
 export default function ColorFeature() {
   const [isClosed, setIsClosed] = useState(false);
@@ -13,12 +14,12 @@ export default function ColorFeature() {
 
   const handleOpenModal = () => {
     // We only set the initial color when opening the modal
-    setCurrentColor("#FF0000"); 
+    setCurrentColor(INITIAL_COLOR); 
     setIsClosed(true);
   };
 
   const handleCloseModal = () => {
-    setCurrentColor('#ffffff'); 
+    setCurrentColor(DEFAULT_RESET_COLOR); 
     setIsClosed(false);
   };
 

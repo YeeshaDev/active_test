@@ -9,20 +9,33 @@ interface ThemeProviderProps {
   children: ReactNode;
 }
 
+export const INITIAL_COLOR = '#FF0000';
+export const DEFAULT_RESET_COLOR = '#ffffff';
+
 export default function ThemeProvider({ children }: ThemeProviderProps) {
   const [currentColor] = useAtom(currentColorAtom);
 
   useEffect(() => {
-    // Handle both the initial and other color changes
-    const themeColor = document.querySelector('meta[name="theme-color"]');
-    if (themeColor) {
-      themeColor.setAttribute('content', currentColor || '#ffffff');
-    } else {
-      const meta = document.createElement('meta');
-      meta.name = 'theme-color';
-      meta.content = currentColor || '#ffffff';
-      document.head.appendChild(meta);
+    const meta = document.querySelector('meta[name="theme-color"]') || (() => {
+      const tag = document.createElement('meta');
+      tag.name = 'theme-color';
+      return tag;
+    })();
+
+    try {
+      meta.setAttribute('content', currentColor || DEFAULT_RESET_COLOR);
+      if (!meta.parentElement) {
+        document.head?.appendChild(meta);
+      }
+    } catch (error) {
+      console.error('Unable to update theme color:', error);
     }
+
+    return () => {
+      if (meta.parentElement === document.head) {
+        meta.remove();
+      }
+    };
   }, [currentColor]);
 
   return <main>{children}</main>;

@@ -25,7 +25,9 @@ export default function Colors({ onBackClick }: ColorsProps) {
 
   // Function to cycle through the colors on screen click
   const handleScreenClick = () => {
-    const currentIndex = colors.indexOf(currentColor ?? colors[0]);
+    const currentIndex = colors.includes(currentColor ?? '') 
+  ? colors.indexOf(currentColor ?? '')
+  : -1;
     const nextIndex = (currentIndex + 1) % colors.length;
     setCurrentColor(colors[nextIndex]);
   };
@@ -45,6 +47,7 @@ export default function Colors({ onBackClick }: ColorsProps) {
       <div className="p-4">
         <button
           onClick={handleBackClick}
+          aria-label="Go back"
           className="text-white text-2xl p-2 rounded focus:outline-none"
         >
           <svg
