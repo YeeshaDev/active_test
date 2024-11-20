@@ -4,13 +4,13 @@ import Button from "@/components/button";
 import { PaintBrushIcon } from "@heroicons/react/20/solid";
 import { useState } from "react";
 import Colors from "./colors";
-import { useAtom } from "jotai";
+import { useSetAtom } from "jotai";
 import { currentColorAtom } from "@/lib/atoms/themes";
 import { DEFAULT_RESET_COLOR, INITIAL_COLOR } from "@/lib/providers/theme-provider";
 
 export default function ColorFeature() {
   const [isClosed, setIsClosed] = useState(false);
-  const [, setCurrentColor] = useAtom(currentColorAtom);
+  const setCurrentColor = useSetAtom(currentColorAtom);
 
   const handleOpenModal = () => {
     // We only set the initial color when opening the modal
