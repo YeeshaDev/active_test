@@ -44,7 +44,7 @@ export default function Colors({ onBackClick }: ColorsProps) {
       style={{ backgroundColor: currentColor ?? colors[0] }}
       onClick={handleScreenClick}
     >
-      <div className="p-4">
+      <div className="px-4 py-8">
         <button
           onClick={handleBackClick}
           aria-label="Go back"

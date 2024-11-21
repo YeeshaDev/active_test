@@ -2,7 +2,7 @@ import Features from "./features";
 
 export default function Home() {
   return (
-    <div className="h-lvh font-[family-name:var(--font-geist-sans)] bg-white  text-gray-700 px-4 py-6">
+    <div className="h-lvh font-[family-name:var(--font-geist-sans)] bg-white  text-gray-700 px-4 py-10">
       <h1 className="text-xl font-semibold text-gray-950 mb-24">active</h1>
       <div className="mb-4">
         <Features />

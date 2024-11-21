@@ -6,7 +6,7 @@ import { useState } from "react";
 import Colors from "./colors";
 import { useSetAtom } from "jotai";
 import { currentColorAtom } from "@/lib/atoms/themes";
-import { DEFAULT_RESET_COLOR, INITIAL_COLOR } from "@/lib/providers/theme-provider";
+import { DEFAULT_RESET_COLOR, INITIAL_COLOR } from "@/constants/constants";
 
 export default function ColorFeature() {
   const [isClosed, setIsClosed] = useState(false);
