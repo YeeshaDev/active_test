@@ -1,5 +1,6 @@
 'use client';
 
+import { DEFAULT_RESET_COLOR } from "@/constants/constants";
 import { currentColorAtom } from "@/lib/atoms/themes";
 import { useAtom } from "jotai";
 import { useEffect } from "react";
@@ -8,9 +9,6 @@ import type { ReactNode } from "react";
 interface ThemeProviderProps {
   children: ReactNode;
 }
-
-export const INITIAL_COLOR = '#FF0000';
-export const DEFAULT_RESET_COLOR = '#ffffff';
 
 export default function ThemeProvider({ children }: ThemeProviderProps) {
   const [currentColor] = useAtom(currentColorAtom);

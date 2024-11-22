@@ -112,7 +112,7 @@ export default function Touch({ onExitClick }: TouchProps) {
         onTouchMove={handleTouch}
         style={{ touchAction: "none" }} // Disable default touch behaviors
       />
-      <span className="absolute text-lg opacity-30 font-bold top-8 left-1/2 -translate-x-1/2 text-gray-900">
+      <span className="absolute text-lg opacity-30 font-bold top-10 left-1/2 -translate-x-1/2 text-gray-900 pt-2">
         Double click to exit
       </span>
     </div>
