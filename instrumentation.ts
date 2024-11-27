@@ -1,0 +1,1 @@
+export { captureRequestError as onRequestError } from '@sentry/nextjs';
