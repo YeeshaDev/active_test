@@ -6,7 +6,20 @@ import { useEffect } from "react";
 
 export default function GlobalError({ error }: { error: Error & { digest?: string } }) {
   useEffect(() => {
-    Sentry.captureException(error);
+    try {
+      Sentry.captureException(error, {
+        tags: {
+          errorType: error.name,
+          hasDigest: !!error.digest
+        },
+        extra: {
+          digest: error.digest,
+          stack: error.stack
+        }
+      });
+    } catch (sentryError) {
+      console.error('Failed to log error to Sentry:', sentryError);
+    }
   }, [error]);
 
   return (
