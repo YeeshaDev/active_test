@@ -11,9 +11,11 @@
   "dependencies": {
     "@heroicons/react": "^2.1.5",
     "@radix-ui/react-dialog": "^1.1.2",
+    "@sentry/nextjs": "^8.40.0",
     "class-variance-authority": "^0.7.0",
     "jotai": "^2.10.2",
     "next": "14.2.13",
+    "posthog-js": "^1.189.0",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.5.2"
